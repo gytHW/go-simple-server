@@ -8,9 +8,13 @@ import (
 	"strings"
 )
 
+var (
+	server = "127.0.0.1:5000"
+)
+
 func main() {
 	//open connection
-	conn, err := net.Dial("tcp", "localhost:5000")
+	conn, err := net.Dial("tcp", server)
 	if err != nil {
 		fmt.Println("Error dialing", err.Error())
 		return

@@ -5,10 +5,14 @@ import (
 	"net"
 )
 
+var (
+	server = "127.0.0.1:5000"
+)
+
 func main() {
 	fmt.Println("starting the server ...")
 	// create listener
-	listener, err := net.Listen("tcp", "localhost:5000")
+	listener, err := net.Listen("tcp", server)
 	if err != nil {
 		fmt.Println("Error listening", err.Error())
 		return
